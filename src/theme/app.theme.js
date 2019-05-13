@@ -16,16 +16,6 @@ const palette = {
     light: '#a394b7',
     dark: '#843384',
   },
-  contributor_primary: {
-    main: '#a363ff',
-    light: '#eeeae3',
-  },
-  contributor_secondary: {
-    main: '#6200ee',
-  },
-  contributor_text: {
-    primary: '#6200ee',
-  },
   others: {
     bg1: '#ede9e2',
   },

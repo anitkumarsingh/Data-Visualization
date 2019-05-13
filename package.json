@@ -15,7 +15,6 @@
     "downshift": "^2.1.1",
     "echarts": "^4.1.0",
     "echarts-for-react": "^2.0.14",
-    "gh-pages": "^2.0.1",
     "history": "^4.6.1",
     "material-ui-pickers": "1.0.0-rc.11",
     "prop-types": "^15.6.2",
@@ -37,9 +36,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

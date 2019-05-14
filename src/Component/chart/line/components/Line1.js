@@ -3,6 +3,7 @@ import ReactEcharts from 'echarts-for-react';
 import 'echarts/theme/macarons';
 import CHARTCONFIG from '../../../../theme/chartConfig';
 import axios from 'axios';
+import Loader from '../../../Loader/Loader'
 
 // let line1 = {};
 
@@ -12,6 +13,7 @@ class Chart extends React.Component{
     this.state={
       data:[],
       error:false,
+      isLoading:true
 
     }
   }
@@ -19,7 +21,7 @@ class Chart extends React.Component{
     axios.get('http://www.mocky.io/v2/5cd04a20320000442200fc10')
         .then(response => {
             const posts = response.data;
-            this.setState({ data: posts });
+            this.setState({ data: posts,isLoading:false });
             // console.log( response );
         })
         .catch(error => {
@@ -110,6 +112,10 @@ getOption = (props) => ({
     //   return ((item.revenue/item.impressions)* 1000).toFixed(5);
     // })
     // console.log(revenue);
+    const { isLoading } = this.state;
+    if(isLoading){
+      return <Loader/>
+    }else{
     return(
       <div className="box box-default">
         <div className="box-header">Line Chart</div>
@@ -119,6 +125,7 @@ getOption = (props) => ({
       </div>
     )
   }
+}
 }
 
 export default Chart;

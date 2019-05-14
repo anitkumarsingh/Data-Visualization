@@ -132,7 +132,7 @@ let EnhancedTableToolbar = props => {
           </Typography>
         ) : (
           <Typography variant="title" id="tableTitle">
-            Nutrition
+            Greedy Game
           </Typography>
         )}
       </div>
@@ -195,7 +195,7 @@ class EnhancedTable extends React.Component {
     axios.get('http://www.mocky.io/v2/5cd04a20320000442200fc10')
         .then(response => {
             const posts = response.data;
-            this.setState({ data: posts });
+            this.setState({ data: posts});
             // console.log( response );
         })
         .catch(error => {
@@ -257,7 +257,7 @@ class EnhancedTable extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { data, order, orderBy, selected, rowsPerPage, page } = this.state;
+    const { data, order, orderBy, selected, rowsPerPage, page} = this.state;
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
     let sortStateData;
     let internalDataStore = [...this.state.data];
@@ -331,6 +331,7 @@ class EnhancedTable extends React.Component {
     );
   }
 }
+
 
 EnhancedTable.propTypes = {
   classes: PropTypes.object.isRequired,

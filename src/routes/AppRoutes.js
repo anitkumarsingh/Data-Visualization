@@ -14,7 +14,6 @@ class App extends Component {
         <Switch>
           <Route path={`${match.path}/`} component={Home}/>
         </Switch>
-       
     );
   }
 }

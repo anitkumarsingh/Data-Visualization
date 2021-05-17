@@ -18,6 +18,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 import axios from 'axios';
+import {BASE_URL} from '../../../Constants/Api'
 
 // let counter = 0;
 // function createData(timestamp, game, revenue, impressions, eCPM) {
@@ -192,7 +193,7 @@ class EnhancedTable extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://www.mocky.io/v2/5cd04a20320000442200fc10')
+    axios.get(`${BASE_URL}/api/player/graph`)
         .then(response => {
             const posts = response.data;
             this.setState({ data: posts});

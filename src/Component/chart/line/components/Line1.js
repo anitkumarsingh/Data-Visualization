@@ -3,7 +3,8 @@ import ReactEcharts from 'echarts-for-react';
 import 'echarts/theme/macarons';
 import CHARTCONFIG from '../../../../theme/chartConfig';
 import axios from 'axios';
-import Loader from '../../../Loader/Loader'
+import Loader from '../../../Loader/Loader';
+import {BASE_URL} from '../../../../Constants/Api'
 
 // let line1 = {};
 
@@ -18,7 +19,7 @@ class Chart extends React.Component{
     }
   }
   componentDidMount() {
-    axios.get('http://www.mocky.io/v2/5cd04a20320000442200fc10')
+    axios.get(`${BASE_URL}/api/player/graph`)
         .then(response => {
             const posts = response.data;
             this.setState({ data: posts,isLoading:false });

@@ -195,7 +195,7 @@ class EnhancedTable extends React.Component {
   componentDidMount() {
     axios.get(`${BASE_URL}/api/player/graph`)
         .then(response => {
-            const posts = response.data;
+            const posts = response.data.players;
             this.setState({ data: posts});
             // console.log( response );
         })

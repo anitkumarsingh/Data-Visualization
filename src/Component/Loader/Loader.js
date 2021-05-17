@@ -45,7 +45,7 @@ class Loader extends React.Component {
           <CircularProgress color="secondary" />
           <br />
           <br />
-          <Typography variant="subtitle1">{loadText}</Typography>
+          <Typography variant="headline">{loadText}</Typography>
         </div>
       </div>
     );

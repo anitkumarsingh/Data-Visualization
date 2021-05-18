@@ -5,7 +5,9 @@ import SortingSelecting from './SortingSelecting';
 const Page = () => (
   <div className="container container-mw-xl chapter">
     <QueueAnim type="bottom" className="ui-animate">
-      <div key="1" className="article__section"><SortingSelecting /></div>
+      <div key="1" className="article__section">
+        <SortingSelecting />
+      </div>
     </QueueAnim>
   </div>
 );

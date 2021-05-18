@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import NavBar from './Component/Header';
 import Footer from './Component/Footer';
-import AppRoutes from './routes/AppRoutes';
-import styles from './theme/styles';
+import AppRoutes from './Routes/AppRoutes';
+import styles from './Theme/styles';
 import withRoot from './withRoot';
 
 const AppContainer = () => (

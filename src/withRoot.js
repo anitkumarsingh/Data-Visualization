@@ -2,11 +2,10 @@ import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 // import theme from './constants/themes/lightTheme';
-import theme from './theme/app.theme';
+import theme from './Theme/app.theme';
 
 function withRoot(Component) {
   function WithRoot(props) {
-
     // MuiThemeProvider makes the theme available down the React tree
     // thanks to React context.
     return (

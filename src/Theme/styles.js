@@ -1,75 +1,75 @@
-const resets = theme => ({
+const resets = (theme) => ({
   a: {
     color: 'inherit',
-    textDecoration: 'none',
+    textDecoration: 'none'
   },
   address: { fontStyle: 'normal' },
   fieldset: {
     borderColor: 'rgba(0, 0, 0, 0.23)',
     borderRadius: theme.shape.borderRadius,
     borderStyle: 'solid',
-    borderWidth: 1,
-  },
+    borderWidth: 1
+  }
 });
 
 const alignment = {
   '.align-middle': { verticalAlign: 'middle' },
-  '.text-center': { textAlign: 'center' },
+  '.text-center': { textAlign: 'center' }
 };
 
-const borders = theme => ({
+const borders = (theme) => ({
   '.border-light': {
-    borderColor: theme.palette.primary.light,
+    borderColor: theme.palette.primary.light
   },
   '.border-none': { borderStyle: 'none' },
   '.border-solid': { borderStyle: 'solid' },
   '.border': { borderWidth: 1, borderStyle: 'solid' },
   '.rounded': { borderRadius: theme.shape.borderRadius },
   '.shadow': { boxShadow: theme.shadows[2] },
-  '.shadow-md': { boxShadow: theme.shadows[5] },
+  '.shadow-md': { boxShadow: theme.shadows[5] }
 });
 
-const colors = theme => ({
+const colors = (theme) => ({
   '.text-light': {
-    color: theme.palette.primary.light,
+    color: theme.palette.primary.light
   },
   '.text-primary': {
-    color: theme.palette.text.primary,
+    color: theme.palette.text.primary
   },
   '.text-white': { color: 'white' },
   '.bg-pri': {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.main
   },
   '.bg-pri-dark': {
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: theme.palette.primary.dark
   },
   '.bg-sec': {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.secondary.main
   },
   '.bg-err-light': {
-    backgroundColor: theme.palette.error.light,
+    backgroundColor: theme.palette.error.light
   },
   '.bg-white': {
-    backgroundColor: 'white',
-  },
+    backgroundColor: 'white'
+  }
 });
 
 const decoration = {
-  '.uppercase': { textTransform: 'uppercase' },
+  '.uppercase': { textTransform: 'uppercase' }
 };
 
 const display = {
   '.block': { display: 'block' },
   '.hidden': { display: 'none' },
-  '.inline': { display: 'inline' },
+  '.inline': { display: 'inline' }
 };
 
-const flex = theme => ({
+const flex = (theme) => ({
   '.flex': { display: 'flex' },
   '.flex-col': { flexDirection: 'column' },
   '.flex-row': { flexDirection: 'row' },
   '.sm-flex-col': {
-    [theme.breakpoints.up('sm')]: { flexDirection: 'column' },
+    [theme.breakpoints.up('sm')]: { flexDirection: 'column' }
   },
   '.flex-wrap': { flexWrap: 'wrap' },
 
@@ -91,39 +91,39 @@ const flex = theme => ({
   '.basis-50': { flexBasis: '50%' },
   '.basis-100': { flexBasis: '100%' },
   '.sm-basis-auto': {
-    [theme.breakpoints.up('sm')]: { flexBasis: 'auto' },
+    [theme.breakpoints.up('sm')]: { flexBasis: 'auto' }
   },
   '.sm-basis-33': {
-    [theme.breakpoints.up('sm')]: { flexBasis: '33%' },
+    [theme.breakpoints.up('sm')]: { flexBasis: '33%' }
   },
   '.sm-basis-50': {
-    [theme.breakpoints.up('sm')]: { flexBasis: '50%' },
+    [theme.breakpoints.up('sm')]: { flexBasis: '50%' }
   },
   '.sm-basis-100': {
-    [theme.breakpoints.up('sm')]: { flexBasis: '100%' },
+    [theme.breakpoints.up('sm')]: { flexBasis: '100%' }
   },
   '.md-basis-20': {
-    [theme.breakpoints.up('md')]: { flexBasis: '20%' },
+    [theme.breakpoints.up('md')]: { flexBasis: '20%' }
   },
   '.md-basis-40': {
-    [theme.breakpoints.up('md')]: { flexBasis: '40%' },
+    [theme.breakpoints.up('md')]: { flexBasis: '40%' }
   },
   '.md-basis-60': {
-    [theme.breakpoints.up('md')]: { flexBasis: '60%' },
-  },
+    [theme.breakpoints.up('md')]: { flexBasis: '60%' }
+  }
 });
 
-const flexOrder = theme => {
+const flexOrder = (theme) => {
   const obj = {};
   const breakpoints = ['', 'sm', 'md'];
   const orders = [...Array(8).keys()];
 
-  breakpoints.forEach(bp =>
+  breakpoints.forEach((bp) =>
     orders.forEach(
-      order =>
+      (order) =>
         (obj[`.${bp ? `${bp}-` : ''}order-${order}`] = bp
           ? {
-              [theme.breakpoints.up(bp)]: obj[`.order-${order}`],
+              [theme.breakpoints.up(bp)]: obj[`.order-${order}`]
             }
           : { order })
     )
@@ -139,29 +139,29 @@ const position = {
   '.pin-b': { bottom: 0 },
   '.pin-l': { left: 0 },
   '.pin-r': { right: 0 },
-  '.pin-t': { top: 0 },
+  '.pin-t': { top: 0 }
 };
 
-const sizing = theme => {
+const sizing = (theme) => {
   const obj = {};
   const breakpoints = ['sm', 'md'];
   breakpoints.forEach(
-    bp =>
+    (bp) =>
       (obj[`.max-w-${bp}`] = {
         [theme.breakpoints.up(bp)]: {
-          maxWidth: theme.breakpoints.values[bp],
-        },
+          maxWidth: theme.breakpoints.values[bp]
+        }
       })
   );
 
   return obj;
 };
 
-const spacing = theme => {
+const spacing = (theme) => {
   const props = {
     p: 'padding',
     m: 'margin',
-    '-m': 'margin',
+    '-m': 'margin'
   };
 
   const sides = {
@@ -171,7 +171,7 @@ const spacing = theme => {
     b: 'Bottom',
     l: 'Left',
     x: ['Left', 'Right'],
-    y: ['Top', 'Bottom'],
+    y: ['Top', 'Bottom']
   };
 
   const values = [0, 1, 2, 3, 4, 6, 12];
@@ -192,9 +192,9 @@ const spacing = theme => {
         }, {});
 
         breakpoints.forEach(
-          bp =>
+          (bp) =>
             (acc[`.${bp}-${styleKey}`] = {
-              [theme.breakpoints.up(bp)]: acc[dotStyleKey],
+              [theme.breakpoints.up(bp)]: acc[dotStyleKey]
             })
         );
 
@@ -207,16 +207,16 @@ const spacing = theme => {
 };
 
 const typography = {
-  '.icon-small': { fontSize: 18 },
+  '.icon-small': { fontSize: 18 }
 };
 
 const dimensions = {
   '.w-full': { width: '100%' },
   '.w-screen': { width: '100vw' },
-  '.h-full': { height: '100%' },
+  '.h-full': { height: '100%' }
 };
 
-const styles = theme => {
+const styles = (theme) => {
   return {
     '@global': Object.assign(
       {},
@@ -233,7 +233,7 @@ const styles = theme => {
       spacing(theme),
       typography,
       dimensions
-    ),
+    )
   };
 };
 

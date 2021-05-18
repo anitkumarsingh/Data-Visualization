@@ -4,17 +4,17 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-const styles = theme => ({
+const styles = (theme) => ({
   loadingContainer: {
     width: '100%',
     display: 'flex',
-    position:'fixed',
-    zIndex:'1000',
+    position: 'fixed',
+    zIndex: '1000',
     flex: '0 1 auto',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    paddingBottom:'30px',
-    backgroundColor: '#fff',
+    paddingBottom: '30px',
+    backgroundColor: '#fff'
   },
   centered: {
     display: 'flex',
@@ -27,10 +27,10 @@ const styles = theme => ({
     height: '200px',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft:'auto',
-    marginRight:'auto',
-    paddingBottom:'30px'
-  },
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    paddingBottom: '30px'
+  }
 });
 
 class Loader extends React.Component {
@@ -53,7 +53,7 @@ class Loader extends React.Component {
 }
 
 Loader.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Loader);
